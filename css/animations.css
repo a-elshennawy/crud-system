@@ -1,0 +1,25 @@
+@keyframes opacityfade {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    30% {
+        opacity: 0.6;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    70% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/vendors/all.min.css">
+    <link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Store</title>
+</head>
+
+<body>
+    <div class="validationalert imgvalidation d-none" id="imgValidation">
+        <h4>Please Select A Product Image</h4>
+    </div>
+    <div class="validationalert emptyvalidation d-none" id="emptyValidation">
+        <h4>Kindly Make Sure All Required Fields Are Filled Correctly</h4>
+    </div>
+    <div class="validationalert added d-none" id="added">
+        <h4>Product is updated successfully.</h4>
+    </div>
+    <div class="validationalert alreadyexist d-none" id="alreadyExist">
+        <h4>This product already exists and will be added to the count.</h4>
+    </div>
+    <div class="validationalert updated d-none" id="updated">
+        <h4>Product is updated successfully.</h4>
+    </div>
+    <section class="main">
+        <div class="container-fluid">
+            <div class="row both">
+                <!-- inputs -->
+                <div class="col-lg-5 col-md-10 inputs row">
+                    <!-- inputs -->
+                    <h2>Product Details</h2>
+                    <div class="input-field col-10">
+                        <label for="productImg">product image</label>
+                        <input type="file" class="form-control" id="productImg">
+                    </div>
+                    <div class="input-field col-10">
+                        <input type="text" placeholder="product name" class="form-control" id="productName">
+                        <h6 class="mt-1 p-2 d-none alert alert-danger">product name is required & [5-20]
+                            characters</h6>
+                    </div>
+                    <div class="input-field col-10">
+                        <input type="number" placeholder="product price" class="form-control" id="productPrice">
+                        <h6 class="mt-1 p-2 d-none alert alert-danger">the price is required & can't be negative</h6>
+                    </div>
+                    <div class="input-field col-10">
+                        <input type="number" placeholder="product discount" class="form-control" id="productDiscount">
+                        <h6 class="mt-1 p-2 d-none alert alert-danger">the discount can't be a negative number or > 100%
+                        </h6>
+                    </div>
+                    <div class="input-field col-10">
+                        <input type="text" placeholder="product description" class="form-control"
+                            id="productDescription">
+                        <h6 class="mt-1 p-2 d-none alert alert-danger">the description is required & [5-20]
+                            characters</h6>
+                    </div>
+                    <div class="input-field col-10">
+                        <input type="number" placeholder="product count" class="form-control w-25" id="productCount">
+                        <h6 class="mt-1 p-2 d-none alert alert-danger">the count is required & > 0</h6>
+                    </div>
+                    <div class="input-field col-10">
+                        <input type="search" placeholder="search..." class="form-control w-25" id="productSearch"
+                            onkeyup="searchProduct(this.value)">
+                    </div>
+                    <!-- buttons -->
+                    <div class="buttons col-12">
+                        <button class="butn add" onclick="addProduct()" id="addButton">
+                            <i class="fa-sharp fa-solid fa-plus"></i>
+                        </button>
+                        <button class="butn del" onclick="deleteAll()">
+                            <i class="fa-solid fa-empty-set"></i>
+                        </button>
+                    </div>
+                    <!-- user-guide -->
+                    <div class="guide">
+                        <div>
+                            <i class="fa-sharp fa-solid fa-plus"></i>
+                            to add new product
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-empty-set"></i>
+                            to clear all product in stock
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-plus"></i>
+                            +1 to the product count
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-minus"></i>
+                            remove 1 from the product count
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            to update a product
+                        </div>
+                        <div>
+                            <i class=" fa-sharp fa-solid fa-check"></i>
+                            to finish updating the product
+                        </div>
+                        <hr>
+                        <p>product name is required & [5-20]
+                            characters</p>
+                        <p>price is required & can't be negative</p>
+                        <p>discount can't be a negative number or > 100%</p>
+                        <p>description is required & [5-20]
+                            characters</p>
+                        <p>the count is required & > 0</p>
+                    </div>
+                </div>
+                <!-- cards -->
+                <div class="col-lg-6 col-md-12 row cards" id="cards">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
